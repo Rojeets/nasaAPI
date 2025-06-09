@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// import Navbar from './components/navbar.componet';
+import Result from './components/home.component';
+import Favorites from './components/favorites.component';
+import APOD from './components/subComponents/apod.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <Navbar /> */}
+      <Routes>
+        <Route path="/" element={< Favorites />} />
+        <Route path="/apod" element={<APOD />} />
+      </Routes>
+    </Router>
   );
 }
 
